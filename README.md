@@ -5,9 +5,15 @@ The main goal of this repository is to test various models for stock market pred
 ## Requirements
 
 - `Python 3.8+`
+- `Miniconda`
 
 ## Get Started
 
+First create environment from `environment.yml` file running following command:
+
+`conda env create -f environment.yml`
+
+
 In order to activate the virtual environment, run following command:
 
-`source stock_prediction/bin/activate`
+`conda activate stock_prediction`

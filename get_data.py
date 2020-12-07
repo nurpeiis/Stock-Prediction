@@ -1,17 +1,16 @@
-import yfinance as yf
+import yfinance as yf # get financial data
+from ta import add_all_ta_features #add technical indicators
 
+
+def add_technical_indicators(history):
+    return add_all_ta_features(history, open="Open", high="High", low="Low", close="Close", volume="Volume") # Substantiate data with momentum indicators
 
 def get_data(stock_name, period='max', interval='1d'):
+    """ 
+        Given stock, it will return pandas DataFrame with various indicators of the price
+        Specify period and interval, default values are max and 1d respectively
+    """
     stock_ticker = yf.Ticker(stock_name)
-    hist = stock_ticker.history(period=period, interval=interval)
-    return hist
-    """
-    For detailed manipulation
-    open_p = hist['Open']
-    high_p = hist['High']
-    low_p = hist['Low']
-    close_p = hist['Close']
-    dates = hist.index.to_series().values
-    start_date = dates[0]
-    end_date = dates[-1]
-    """
+    history = stock_ticker.history(period=period, interval=interval)
+    history_with_technical_indicators = add_technical_indicators(history)
+    return history_with_technical_indicators
