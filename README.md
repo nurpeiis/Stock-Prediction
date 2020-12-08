@@ -1,6 +1,7 @@
 # Stock Prediction
+<img src="documentation/stocks.png" height="200" align="right">
 
-The main goal of this repository is to test various models for stock market prediction. We employ Yahoo! Finance's live data using `yfinance` python library
+> The main goal of this repository is to test various models for stock market prediction. We employ Yahoo! Finance's live data using `yfinance` python library
 
 ## Table of contents:
  - [Requirements](#requirements)
