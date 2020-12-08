@@ -20,10 +20,11 @@ def choose_index_without_weight(indices):
 
 def get_predictions(train_data_1d, number_of_neighbors, num_points_to_predict, r, weighted=True):
     """ 
-        train_data:  list<float>, training data, assume that train_data[len(train_data) - r:] is the data upon which the next item will be predicted in
+        train_data_1d:  list<float>, training data, assume that train_data[len(train_data) - r:] is the data upon which the next item will be predicted in
         number_of_neighbors: int, the value of k-neirest algorithm
         num_points_to_predict: int, number of points that you want to predict
         r: int, time-delay vector factor
+        weighted: bool, if True the probability that certain K-nearest neighbor is going to be chosen will be inversely propotional to the distance from current point
     """
     #Step 1: create train data and train NearestNeighbors using Ball Tree Algorithm
     train_data  = [train_data_1d[i:i+r] for i in range(0, len(train_data_1d)-r, r)]
