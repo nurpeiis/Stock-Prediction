@@ -4,7 +4,7 @@ from numpy.random import choice
 from sklearn.neighbors import NearestNeighbors
 
 def compute_prob_distr(distances):
-    inverse_distances = [1/d for d in distances]
+    inverse_distances = [1/(d+1) for d in distances]
     sum_d = sum(inverse_distances)
     prob_distr = [d/sum_d for d in inverse_distances]
     return prob_distr
